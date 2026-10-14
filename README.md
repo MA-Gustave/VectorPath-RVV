@@ -307,5 +307,3 @@ For compilers that do not support [C++17](https://en.wikipedia.org/wiki/C%2B%2B1
 For efficient number serialization, we bundle Junekey Jeon's implementation of the Dragonbox algorithm for binary to decimal floating-point numbers (https://github.com/jk-jeon/dragonbox). The Dragonbox implementation is provided under the Apache License Version 2.0 with LLVM Exceptions (LICENSE-Apache2-LLVM or https://llvm.org/foundation/relicensing/LICENSE.txt) or the Boost Software License Version 1.0 (LICENSE-Boost or https://www.boost.org/LICENSE_1_0.txt).
 
 For runtime dispatching, we use some code from the PyTorch project licensed under 3-clause BSD.
-#   V e c t o r P a t h - R V V  
- 
