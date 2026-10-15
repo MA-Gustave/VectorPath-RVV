@@ -1,10 +1,9 @@
-# ZIP VectorPath-RVV — DROP ROOT & OVERWRITE
+# VectorPath-RVV — distribution et périmètre des licences
 
-Extraire ce ZIP **dans le dossier racine `VectorPath-RVV`**, sans sous-dossier
-supplémentaire. Conserver le `LICENSE` sélectionné lors de la création du dépôt.
-Le code moteur figure directement sous `src/`, `include/`, `scripts/`, etc.
+Extraire l'archive de distribution **après revue des différences** dans le dossier racine `VectorPath-RVV`, sans sous-dossier supplémentaire.
 
-Lab Studio est fourni dans le **second ZIP VLA-MethodLab**, qui embarque une
-copie correspondante sous `engine/` afin de fonctionner sans sous-module.
-Les licences simdjson tierces restent disponibles dans
-`THIRD_PARTY_LICENSES/` et `LICENSE-MIT`.
+**Cette version contient un fichier `LICENSE` racine de périmètre mixte.** Il ne doit pas être pris pour un remplacement rétroactif de licences Apache/MIT antérieures. Le texte Apache original est conservé dans `THIRD_PARTY_LICENSES/simdjson-Apache-2.0.txt`, le texte MIT dans `LICENSE-MIT` et `THIRD_PARTY_LICENSES/simdjson-MIT.txt`. Conserver les notices des autres tiers.
+
+Les parties originales prospectivement et validement réservées ne peuvent être incorporées au simdjson officiel sans autorisation écrite signée. Aucune partie actuellement publiée n'est certifiée comme nouvellement réservée à partir des seules archives ; consulter `LICENSE-ORIGINAL-ADDITIONS.md`, `PROVENANCE-ADDITIONS.md` et `UPSTREAM-EXCLUSION.md`.
+
+Le moteur est à la racine de ce dépôt (`src/`, `include/`, `scripts/`...). MethodLab est séparé et inclut une copie conforme sous `engine/` pour les essais.

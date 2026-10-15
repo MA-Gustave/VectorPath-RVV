@@ -1,0 +1,5 @@
+VectorPath-RVV contains substantial code and documentation from the independent upstream simdjson project. Original copyright and attribution notices remain with their original authors and contributors, including Daniel Lemire, Geoff Langdale and John Keiser and the other simdjson contributors. This fork is not approved or endorsed by those persons or by the upstream project.
+
+Inherited simdjson code remains under the applicable Apache-2.0 and/or MIT licences. Exact texts preserved in THIRD_PARTY_LICENSES/simdjson-Apache-2.0.txt, THIRD_PARTY_LICENSES/simdjson-MIT.txt and LICENSE-MIT. Embedded components can be subject to Boost, BSD-3-Clause, Apache-2.0 with LLVM exceptions or other file-specific licensing. Preserve their exact notices.
+
+Independent authorship or exclusive ownership is claimed only for copyrightable expression actually controlled by the named rightsholder and proven in PROVENANCE-ADDITIONS.md. No additions are currently verified as newly restricted solely by the supplied snapshots. See LICENSE and LICENSE-SCOPE.md.

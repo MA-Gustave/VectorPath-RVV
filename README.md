@@ -1,3 +1,6 @@
+> **IMPORTANT — MIXED-ORIGIN LICENSING / NO UPSTREAM INTEGRATION PERMISSION FOR VERIFIED RESERVED ADDITIONS**  
+> This independent fork includes code originally licensed under Apache-2.0/MIT and new paths of unverified origin. Only *future or otherwise verified*, separately marked and legally eligible copyrighted additions can be reserved under [the restricted notice](LICENSE-ORIGINAL-ADDITIONS.md); there are presently no certified restricted source entries. **No authorization is offered to incorporate any such qualifying reserved additions into official `simdjson/simdjson` without signed permission.** All earlier upstream and permissive rights remain effective. See [LICENSE](LICENSE), [scope](LICENSE-SCOPE.md), [provenance](PROVENANCE-ADDITIONS.md), [upstream exclusion](UPSTREAM-EXCLUSION.md). This fork is not endorsed by upstream.
+
 # VectorPath-RVV — moteur RISC-V RVV / simdjson
 
 Dépôt : https://github.com/MA-Gustave/VectorPath-RVV
@@ -10,9 +13,7 @@ Cette distribution est une dérivation expérimentale de **simdjson 5.0.3**,
 pas une édition officielle de simdjson. Les notices d'origine Apache-2.0 et
 MIT sont conservées dans `THIRD_PARTY_LICENSES/` et `LICENSE-MIT`.
 
-Le ZIP **n'inclut volontairement aucun fichier `LICENSE` à la racine** afin
-de ne pas écraser la licence que tu as choisie en créant le dépôt GitHub.
-Elle n'annule pas les droits et obligations concernant les composants tiers.
+La présente distribution **inclut un fichier `LICENSE` à la racine** exposant le périmètre mixte de droits. Les textes historiques Apache/MIT de simdjson restent conservés, sans changement, dans `THIRD_PARTY_LICENSES/` et `LICENSE-MIT`. Les ajouts originaux répondant aux critères restrictifs ne peuvent pas être incorporés dans simdjson officiel sans autorisation signée ; aucune portion existante n'est présentement certifiée comme telle par ces instantanés.
 
 L'interface de gestion des expériences se trouve séparément dans
 [VLA-MethodLab](https://github.com/MA-Gustave/VLA-MethodLab) ; son dossier
@@ -21,10 +22,13 @@ L'interface de gestion des expériences se trouve séparément dans
 
 ---
 
-[![][license img]][license] [![][licensemit img]][licensemit]
+**Licence du dépôt : origine mixte** — [périmètre détaillé](LICENSE-SCOPE.md) ; les licences Apache/MIT ci-dessous ne concernent que le matériel auquel elles s’appliquent.
 
 
 [![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://simdjson.github.io/simdjson/)
+
+Documentation technique héritée de simdjson (attribution historique, non-endossement)
+==============================================================================
 
 simdjson : Parsing gigabytes of JSON per second
 ===============================================
@@ -291,14 +295,14 @@ RGPIN-2017-03910 and RGPIN-2024-03787.
 Contributing to simdjson
 ------------------------
 
-Head over to [CONTRIBUTING.md](CONTRIBUTING.md) for information on contributing to simdjson, and
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for this independent fork (not for upstream submission), and
 [HACKING.md](HACKING.md) for information on source, building, and architecture/design.
 
 
 License
 -------
 
-This code is made available under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) as well as under the MIT License. As a user, you can pick the license you prefer.
+**Inherited simdjson code** is made available under its original [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) and/or MIT terms, as applicable; already-licensed fork modifications keep their prior grants. **The entire mixed-origin fork is not offered under one blanket licence**. For prospectively verified original additions, consult [LICENSE](LICENSE), [LICENSE-SCOPE.md](LICENSE-SCOPE.md) and [LICENSE-ORIGINAL-ADDITIONS.md](LICENSE-ORIGINAL-ADDITIONS.md). No qualifying reserved additions are yet verified from the supplied snapshots.
 
 Under Windows, we build some tools using the windows/dirent_portable.h file (which is outside our library code): it is under the liberal (business-friendly) MIT license.
 
