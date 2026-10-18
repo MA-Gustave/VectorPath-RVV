@@ -18,11 +18,13 @@
 // 2 = A2: A1 size gate + quick bounded prefix scan for larger JSON.
 // Requires SIMDJSON_RVV_FORCE_PLAN=0. A3 block-level refinement is NOT
 // implemented here; these three profiles are intentionally fixed.
+// VectorPath release candidate: Level 2 is the validated X60 default.
+// -D flags still permit reproducible A0/A1 comparisons.
 #ifndef SIMDJSON_RVV_ADAPTIVE_V2_LEVEL
-#define SIMDJSON_RVV_ADAPTIVE_V2_LEVEL 0
+#define SIMDJSON_RVV_ADAPTIVE_V2_LEVEL 2
 #endif
 #ifndef SIMDJSON_RVV_ADAPTIVE_V2_MIN_BYTES
-#define SIMDJSON_RVV_ADAPTIVE_V2_MIN_BYTES 4096
+#define SIMDJSON_RVV_ADAPTIVE_V2_MIN_BYTES 16384
 #endif
 #ifndef SIMDJSON_RVV_ADAPTIVE_V2_QUICK_BYTES
 #define SIMDJSON_RVV_ADAPTIVE_V2_QUICK_BYTES 512
@@ -47,7 +49,9 @@
 #define SIMDJSON_RVV_SPARSE_ESCAPE_THRESHOLD 2
 #endif
 #ifndef SIMDJSON_RVV_ENABLE_PACKED_CONTROL
-#define SIMDJSON_RVV_ENABLE_PACKED_CONTROL 1
+// Benchmark-supported stable profile keeps packed paths disabled.
+// Opt-in historical A/B builds may override each macro with -D.
+#define SIMDJSON_RVV_ENABLE_PACKED_CONTROL 0
 #endif
 #ifndef SIMDJSON_RVV_ENABLE_PACKED_INDEX_WRITER
 #define SIMDJSON_RVV_ENABLE_PACKED_INDEX_WRITER SIMDJSON_RVV_ENABLE_PACKED_CONTROL

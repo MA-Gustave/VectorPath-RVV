@@ -133,7 +133,7 @@ else:
 RelativeRoot = str # Literal['src','include'] # Literal not supported in Python 3.7 (CI)
 RELATIVE_ROOTS: List[RelativeRoot] = ['src', 'include' ]
 Implementation = str # Literal['arm64', 'fallback', 'haswell', 'icelake', 'ppc64', 'westmere', 'lsx', 'lasx'] # Literal not supported in Python 3.7 (CI)
-IMPLEMENTATIONS: List[Implementation] = [ 'arm64', 'haswell', 'icelake', 'lasx', 'lsx', 'ppc64', 'rvv-vls', 'westmere', 'fallback' ]
+IMPLEMENTATIONS: List[Implementation] = [ 'arm64', 'haswell', 'icelake', 'lasx', 'lsx', 'ppc64', 'rvv', 'rvv-vls', 'westmere', 'fallback' ]
 implementation_re = re.compile(f'(^|/)({"|".join(IMPLEMENTATIONS)})')
 GENERIC_INCLUDE = "simdjson/generic"
 GENERIC_SRC = "generic"
@@ -698,14 +698,18 @@ class Amalgamator:
 # does not change with locale and timezone at time of generation.
 # Forcing it to be UTC is difficult, because it needs to be portable
 # between gnu date and busybox date.
-try:
+# SOURCE_DATE_EPOCH makes ZIP-based releases reproducible without .git.
+if os.environ.get('SOURCE_DATE_EPOCH'):
+    timestamp = datetime.datetime.fromtimestamp(
+        int(os.environ['SOURCE_DATE_EPOCH']),
+        datetime.timezone.utc).isoformat()
+else:
     proc = subprocess.run(['git', 'show', '-s', '--format=%ci', 'HEAD'],
-                           stdout=subprocess.PIPE)
-    log("the commandline is {}".format(proc.args))
-    timestamp = proc.stdout.decode('utf-8').strip()
-except:
-    print("git not found, timestamp based on current time")
-    timestamp = str(datetime.datetime.now())
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    timestamp = proc.stdout.decode('utf-8').strip() if proc.returncode == 0 else ''
+    if not timestamp:
+        timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        log('git metadata unavailable, using current UTC timestamp')
 log(f"timestamp is {timestamp}")
 
 os.makedirs(AMALGAMATE_OUTPUT_PATH, exist_ok=True)

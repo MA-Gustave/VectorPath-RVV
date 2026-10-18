@@ -144,7 +144,13 @@
 
 #define SIMDJSON_CAN_ALWAYS_RUN_RVV_VLS SIMDJSON_IS_RVV_VLS
 #ifndef SIMDJSON_IMPLEMENTATION_RVV_VLS
+// VectorPath shipping preference: select the scalable RVV-VLA backend when
+// both RVV implementations are available. Explicit -D can still force VLS.
+#if SIMDJSON_IMPLEMENTATION_RVV && SIMDJSON_IS_RVV
+#define SIMDJSON_IMPLEMENTATION_RVV_VLS 0
+#else
 #define SIMDJSON_IMPLEMENTATION_RVV_VLS SIMDJSON_CAN_ALWAYS_RUN_RVV_VLS
+#endif
 #endif
 
 // Default Fallback to on unless a builtin implementation has already been selected.

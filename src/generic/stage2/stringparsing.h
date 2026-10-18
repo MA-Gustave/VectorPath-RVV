@@ -1,4 +1,17 @@
 #include <cstdint>
+// Optional Stage 2 experiments (Test 103/104).
+// The stable delivery profile intentionally keeps both OFF.
+// Enable explicitly in an A/B build, never silently in production.
+#ifndef SIMDJSON_VECTORPATH_STAGE2_SIMPLE_RUN
+#define SIMDJSON_VECTORPATH_STAGE2_SIMPLE_RUN 0
+#endif
+#ifndef SIMDJSON_VECTORPATH_STAGE2_NL4
+#define SIMDJSON_VECTORPATH_STAGE2_NL4 0
+#endif
+#if SIMDJSON_VECTORPATH_STAGE2_NL4 && !SIMDJSON_VECTORPATH_STAGE2_SIMPLE_RUN
+#error "NL4 requires SIMDJSON_VECTORPATH_STAGE2_SIMPLE_RUN=1"
+#endif
+
 #ifndef SIMDJSON_SRC_GENERIC_STAGE2_STRINGPARSING_H
 
 #ifndef SIMDJSON_CONDITIONAL_INCLUDE
@@ -187,6 +200,27 @@ simdjson_warn_unused simdjson_inline uint8_t *parse_string(const uint8_t *src, u
         dst[bs_dist] = escape_result;
         src += bs_dist + 2;
         dst += bs_dist + 1;
+
+#if SIMDJSON_VECTORPATH_STAGE2_SIMPLE_RUN
+        // Optional (research only): Test 103/104 contiguous simple-escape path.
+        // Keep Unicode and malformed escape handling in the original decoder.
+#if SIMDJSON_VECTORPATH_STAGE2_NL4
+        while (src[0] == '\\' && src[1] == 'n' &&
+               src[2] == '\\' && src[3] == 'n' &&
+               src[4] == '\\' && src[5] == 'n' &&
+               src[6] == '\\' && src[7] == 'n') {
+          dst[0] = '\n'; dst[1] = '\n'; dst[2] = '\n'; dst[3] = '\n';
+          dst += 4;
+          src += 8;
+        }
+#endif
+        while (src[0] == '\\') {
+          const uint8_t decoded = escape_map[src[1]];
+          if (decoded == 0u) { break; }
+          *dst++ = decoded;
+          src += 2;
+        }
+#endif
       }
     } else {
       /* they are the same. Since they can't co-occur, it means we

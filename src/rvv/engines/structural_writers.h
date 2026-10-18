@@ -3,7 +3,7 @@
 #include "rvv/engines/engine_plan.h"
 #ifndef SIMDJSON_CONDITIONAL_INCLUDE
 #include "rvv/string_scanner.h"
-#endif
+#endif // SIMDJSON_CONDITIONAL_INCLUDE
 
 namespace simdjson { namespace rvv { namespace engines {
 

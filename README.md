@@ -15,10 +15,18 @@ MIT sont conservées dans `THIRD_PARTY_LICENSES/` et `LICENSE-MIT`.
 
 La présente distribution **inclut un fichier `LICENSE` à la racine** exposant le périmètre mixte de droits. Les textes historiques Apache/MIT de simdjson restent conservés, sans changement, dans `THIRD_PARTY_LICENSES/` et `LICENSE-MIT`. Les ajouts originaux répondant aux critères restrictifs ne peuvent pas être incorporés dans simdjson officiel sans autorisation signée ; aucune portion existante n'est présentement certifiée comme telle par ces instantanés.
 
+**Release candidate A2 (2026-10-18).** Le profil de compilation du moteur
+VectorPath est désormais A2 / 16 Kio / packed désactivé, avec préférence pour le
+backend scalable RVV-VLA. Les chemins Stage 2 SIMPLE_RUN et NL4 restent des
+options expérimentales désactivées par défaut. Ce correctif concerne VectorPath,
+**pas** la copie `engine/` épinglée dans Method Lab. Voir
+[le protocole de consolidation](README-VECTORPATH-RELEASE-CANDIDATE.md) et
+[les critères de validation finale](docs/VECTORPATH_RC_VALIDATION.md).
+
 L'interface de gestion des expériences se trouve séparément dans
 [VLA-MethodLab](https://github.com/MA-Gustave/VLA-MethodLab) ; son dossier
-`engine/` embarque une copie identique des sources du moteur de cette livraison
-(à l'exception des documents et de la licence à la racine des nouveaux dépôts).
+`engine/` peut embarquer une copie antérieure des sources pendant la validation.
+Ne pas écraser cette copie sans campagne de synchronisation dédiée.
 
 ---
 

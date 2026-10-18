@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "source_snapshot": "znapshot_VectorPath-RVV_10180838.zip",
+  "purpose": "VectorPath A2 16KiB packed-off shipping-candidate defaults plus optional Stage2 variants",
+  "baseline_version": "simdjson fork v5.0.3",
+  "deployment_root": "VectorPath-RVV (not VLA-MethodLab)",
+  "riscv_native_release_approved": false,
+  "tests": "GCC and Clang host fallback smoke + source/singleheader + CMake build; native RVV pending",
+  "files": [
+    {
+      "path": "PERFORMANCE.md",
+      "bytes": 2141,
+      "new_sha256": "2b1ddf5c05dcf5a3aaf8bbaacfd28237f98aa50f8556c8925ca6feee4797b3d2",
+      "original_sha256": "4a30bd8d35e28fd66c04e7c7a7a6b89c178991bae49c22907fa6c73a33f1e3ec"
+    },
+    {
+      "path": "README-VECTORPATH-RELEASE-CANDIDATE.md",
+      "bytes": 6302,
+      "new_sha256": "e7c53e475d6b4038da3de1dd22d39d1238c1d16a7dae09b706ea476543d59a75",
+      "original_sha256": null
+    },
+    {
+      "path": "README.md",
+      "bytes": 18859,
+      "new_sha256": "27dc40317961518ba1d5a8696d1e824a7dc2e4d402a2a44b1018771217b49851",
+      "original_sha256": "316ed633e8044fd7ccad3618764f988c638c1d6e5d424dbdd43e71160d2bc489"
+    },
+    {
+      "path": "docs/LOCAL_VALIDATION_20261018.md",
+      "bytes": 1896,
+      "new_sha256": "e1dfa78a2c04fac9491b58d2db96f2735efaf5d48421b9d867c9f280000f6477",
+      "original_sha256": null
+    },
+    {
+      "path": "docs/VECTORPATH_RC_VALIDATION.md",
+      "bytes": 4655,
+      "new_sha256": "c3f4c1a53a30c6f9ad8ea79ec40c9f95e6ef8592a22b9ea45142d746e0a7e0ca",
+      "original_sha256": null
+    },
+    {
+      "path": "include/simdjson/implementation_detection.h",
+      "bytes": 7507,
+      "new_sha256": "e174d29e3fa839c48b57b643a2edba422260e47bf0f3d3ad4b65673428db0eb9",
+      "original_sha256": "c5f4e27c1987a4a661934fdd075ff4a38f161ffbc8b3c3f0cb7d7e8947789ea6"
+    },
+    {
+      "path": "scripts/rvv/release_candidate_check.py",
+      "bytes": 5711,
+      "new_sha256": "b3dcabb77b5fd95d21882f446a5a06a8ac1aa3a4c45e3a66a611fd0c8a7f9711",
+      "original_sha256": null
+    },
+    {
+      "path": "singleheader/README.md",
+      "bytes": 916,
+      "new_sha256": "290696f1fcb606198dee67a18c7cfad6c5a149ff5aee8f5286b1cafd5139b3fb",
+      "original_sha256": "f472d5035438b1595ba0db5467df9d44e2f9251f1b5734267591ff740c6d5fc8"
+    },
+    {
+      "path": "singleheader/amalgamate.py",
+      "bytes": 41376,
+      "new_sha256": "c5e251b7a6fb73ab1073983d25d8334a247791dcc5fca6eb800d56cb3a4534d8",
+      "original_sha256": "c23ab8413efb76a5d7e19e56eec2812847281717d05789554cd8158ea050ed6c"
+    },
+    {
+      "path": "singleheader/simdjson.cpp",
+      "bytes": 3748348,
+      "new_sha256": "6c36f2ef6a11b5683012fab24786968443cd993520eba48dfad44e4c63f7f758",
+      "original_sha256": "f44b2798458dd6473afcd3c564a3433c657e38493a10bd50812589a20e2ec00d"
+    },
+    {
+      "path": "singleheader/simdjson.h",
+      "bytes": 11285136,
+      "new_sha256": "aa6da98755a19a2abaf49af40d578a91bc5a48f3089ff3ed0866a12fff951d4d",
+      "original_sha256": "c23412d6a5aedb3215ca6617db882eee47642318c330173c319a8fca454b9f3d"
+    },
+    {
+      "path": "src/generic/stage2/stringparsing.h",
+      "bytes": 15441,
+      "new_sha256": "2d2c6ea59d34c3c7b5d04078eb51acfee81c986f64b582a14cfe5dfe926decff",
+      "original_sha256": "d8f52d5cc086d7ec493a9a9c8c1d670afda4e362a68e8a8277f7c3d576af319e"
+    },
+    {
+      "path": "src/rvv/engines/engine_plan.h",
+      "bytes": 7969,
+      "new_sha256": "d289fbaacc53ce5139b9bc72a9262155b96d23263ab324500d1671192a32785a",
+      "original_sha256": "7ebd7d2f4606c9ed9db77bcced50371e669698e5278f1afc4e5369fc5b4e7f4e"
+    },
+    {
+      "path": "src/rvv/engines/structural_writers.h",
+      "bytes": 2618,
+      "new_sha256": "8029f462063c97f270de844bbc61299975d5160db0acde97276fe31a07b2ef1f",
+      "original_sha256": "4a9d75bdb642a9fd8532694a7d8e1aa1dc3c438aa84650ff8d2b12c7bf3bfa93"
+    },
+    {
+      "path": "src/rvv/string_scanner.h",
+      "bytes": 21911,
+      "new_sha256": "12ef1804f6a3b26ee915b72ffc979f111698c44b16eb407363186a6992143d22",
+      "original_sha256": "97e6a873a93096862a671213ec17ce0df3a9d5b1e50b70e97d53169704049079"
+    },
+    {
+      "path": "tests/rvv/release_dom_check.cpp",
+      "bytes": 944,
+      "new_sha256": "392f056cddb5e5bd30c2daf12105c0441bfd8deae1a1595de3d45608be292ded",
+      "original_sha256": null
+    },
+    {
+      "path": "tests/rvv/release_profile_tests.cpp",
+      "bytes": 1819,
+      "new_sha256": "f6f30f5b7d078b08f4ac028d4620d09d9f42b283a65f39c4132bbb34936cc06d",
+      "original_sha256": null
+    }
+  ]
+}
