@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "status": "frozen publication source — not git tagged",
+  "assembled_from": {
+    "source_snapshot": "znapshot_VectorPath-RVV_10180838.zip",
+    "source_snapshot_sha256": "791e2e0c16065fe0f54430196a8800eeb150743faaa3e8799d5f0c8b9bc6d43e",
+    "overlay": "VectorPath-RVV_A2_STABLE_STAGE2_OPTIONAL_DROP_ROOT_20261018.zip",
+    "overlay_sha256": "39377f4a106ae4eaadc9d8377ec8c7b8ffacdcf80eaa3eec2c13b015aea22c09"
+  },
+  "test106_pinned_candidate_patch_sha256": "513dbf6ea2241d469ade18a354e18a77303d66ce9d6794fb8595ee59e01f0388",
+  "original_src_simdjson_sha256": "fdaea284a48b30ab3e912e1cd3580e920fe186a229faabba97d9b24eed095e16",
+  "tested_cpp_sha256": {
+    "include/simdjson/implementation_detection.h": "e174d29e3fa839c48b57b643a2edba422260e47bf0f3d3ad4b65673428db0eb9",
+    "src/generic/stage2/stringparsing.h": "2d2c6ea59d34c3c7b5d04078eb51acfee81c986f64b582a14cfe5dfe926decff",
+    "src/rvv/engines/engine_plan.h": "d289fbaacc53ce5139b9bc72a9262155b96d23263ab324500d1671192a32785a",
+    "src/rvv/engines/structural_writers.h": "8029f462063c97f270de844bbc61299975d5160db0acde97276fe31a07b2ef1f",
+    "src/rvv/string_scanner.h": "12ef1804f6a3b26ee915b72ffc979f111698c44b16eb407363186a6992143d22"
+  },
+  "test106_binary_proof": {
+    "cloudv": {
+      "original_a2_elf_sha256": "87e658bd1be322dd41a92e42a60d0d41308819dac9af188ac535f138c93b555f",
+      "stable_elf_sha256": "87e658bd1be322dd41a92e42a60d0d41308819dac9af188ac535f138c93b555f",
+      "equal": true,
+      "frozen_patch_sha256": "513dbf6ea2241d469ade18a354e18a77303d66ce9d6794fb8595ee59e01f0388"
+    },
+    "epcc": {
+      "original_a2_elf_sha256": "9c965fb58f31053f0b9a1cfc54e051d8787ab59d4eda307bb6878a78023ecddb",
+      "stable_elf_sha256": "9c965fb58f31053f0b9a1cfc54e051d8787ab59d4eda307bb6878a78023ecddb",
+      "equal": true,
+      "frozen_patch_sha256": "513dbf6ea2241d469ade18a354e18a77303d66ce9d6794fb8595ee59e01f0388"
+    }
+  },
+  "baseline": "official simdjson 5.0.4 fallback",
+  "repository_base": "simdjson 5.0.3 derived fork",
+  "ci_sha": "81c6b1c150a73925894c5f5863d2892cc0a1ec4c",
+  "ci_repository": "MA-Gustave/Simdjson-rvv-vla (separate from VectorPath-RVV)",
+  "ci_run_url": "https://github.com/MA-Gustave/Simdjson-rvv-vla/actions/runs/39155386567",
+  "evidence": {
+    "cloudv_test106_archive_sha256": "cb0808f0fdc95d2cda99039af78abe8b91349c1d74832254c21df52ac2258168",
+    "epcc_test106_archive_sha256": "d670d27d0811c97dae1427921ed19e397046d01c15de830fa447a95d9bd0b25a"
+  }
+}
