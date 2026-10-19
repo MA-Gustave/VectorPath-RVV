@@ -2,7 +2,7 @@
 
 **Custom proprietary notice, version 2026-10-14 — NOT an OSI-approved open-source licence.**
 
-Copyright © 2026 Gustave Leblanc (MA-Gustave), solely with respect to demonstrably copyrightable original contributions actually owned or exclusively controlled by that rightsholder. All rights reserved, subject to prior grants and applicable law.
+Copyright © 2026 Gustave Leblanc or the lawful copyright owner represented by the GitHub account MA-Gustave (https://github.com/MA-Gustave), solely with respect to demonstrably copyrightable original contributions actually owned or exclusively controlled by that rightsholder. All rights reserved, subject to prior grants and applicable law.
 
 ## 1. Definition and eligibility of Covered Material
 

@@ -110,3 +110,5 @@ objs
 
 # Test98 downloaded simdjson-data benchmark corpus (not committed)
 /.cache/test98-corpus/
+
+ZmartZnap.pyw
